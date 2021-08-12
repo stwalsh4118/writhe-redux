@@ -1,8 +1,44 @@
 <div class="card-wrapper">
-	<div
-		[@inViewRight]="isInView ? 'onScreen' : 'offScreen'"
-		class="content-wrapper"
-	>
-		<div class="testDiv" #testDiv>HELLO!</div>
+	<div *ngIf="Right" class="perspective-wrapper">
+		<div #testDiv class="testDiv"></div>
+		<div
+			[@inViewRight]="isInView ? 'onScreen' : 'offScreen'"
+			class="content-wrapper"
+		>
+			<carousel
+				[height]="440"
+				[width]="800"
+				[cellsToShow]="1"
+				[images]="images"
+			></carousel>
+			<div class="content-text">
+				<div class="content-title">{{ contentTitle }}</div>
+				<div class="content-about">{{ contentAbout }}</div>
+				<div class="content-link">
+					<a href="{{ link }}" target="_blank" class="link">Github</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="!Right" class="perspective-wrapper-left">
+		<div #testDiv class="testDiv"></div>
+		<div
+			[@inViewLeft]="isInView ? 'onScreen' : 'offScreen'"
+			class="content-wrapper-left"
+		>
+			<carousel
+				[height]="440"
+				[width]="800"
+				[cellsToShow]="1"
+				[images]="images"
+			></carousel>
+			<div class="content-text">
+				<div class="content-title">{{ contentTitle }}</div>
+				<div class="content-about">{{ contentAbout }}</div>
+				<div class="content-link">
+					<a href="{{ link }}" target="_blank" class="link">Github</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

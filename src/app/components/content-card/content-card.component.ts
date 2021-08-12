@@ -1,4 +1,4 @@
-import { AfterViewChecked, ElementRef } from "@angular/core";
+import { AfterViewChecked, ElementRef, Input } from "@angular/core";
 import { HostListener } from "@angular/core";
 import { ViewChild } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
@@ -28,13 +28,34 @@ import { AfterViewInit } from "@angular/core";
 					left: "0px",
 				})
 			),
-			transition("offScreen => onScreen", [animate(".5s 0s ease-in")]),
-			transition("onScreen => offScreen", [animate(".5s 0s ease-in")]),
+			transition("offScreen => onScreen", [animate(".7s 0s ease-in")]),
+			transition("onScreen => offScreen", [animate(".7s 0s ease-in")]),
+		]),
+		trigger("inViewLeft", [
+			state(
+				"offScreen",
+				style({
+					right: "200%",
+				})
+			),
+			state(
+				"onScreen",
+				style({
+					right: "0px",
+				})
+			),
+			transition("offScreen => onScreen", [animate(".7s 0s ease-in")]),
+			transition("onScreen => offScreen", [animate(".7s 0s ease-in")]),
 		]),
 	],
 	styleUrls: ["./content-card.component.css"],
 })
 export class ContentCardComponent implements OnInit, AfterViewInit {
+	@Input() images: any = [];
+	@Input() Right!: boolean;
+	@Input() contentTitle!: string;
+	@Input() contentAbout!: string;
+	@Input() link!: string;
 	constructor() {}
 
 	ngOnInit(): void {}

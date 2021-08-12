@@ -14,12 +14,11 @@ import { AfterViewInit, Component, OnInit } from "@angular/core";
 	animations: [
 		trigger("inView", [
 			transition(":enter", [
-				animate(".5s 0s ease-in"),
-				style({ bottom: "0px" }),
+				style({ bottom: "100%", opacity: 0 }),
+				animate("1s 0s ease-out", style({ bottom: "5vh", opacity: 1 })),
 			]),
 			transition(":leave", [
-				animate(".5s 0s ease-in"),
-				style({ bottom: "100%" }),
+				animate(".5s 0s ease-in", style({ bottom: "100%" })),
 			]),
 		]),
 	],
@@ -28,7 +27,9 @@ export class MainCardComponent implements OnInit, AfterViewInit {
 	pageLoaded: boolean = false;
 	constructor() {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.pageLoaded = true;
+	}
 
 	ngAfterViewInit(): void {
 		this.pageLoaded = true;

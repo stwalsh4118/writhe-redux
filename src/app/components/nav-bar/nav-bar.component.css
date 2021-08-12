@@ -5,12 +5,16 @@
 
 .nav-wrapper {
 	width: 100%;
-	min-height: 50px;
+	min-height: 6vh;
 	box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.05);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	z-index: 300;
+	position: sticky;
+	top: 0;
+	background-color: white;
+	border-top: 1vh solid black;
 }
 
 .nav-title {
@@ -26,7 +30,7 @@
 .logo {
 	position: absolute;
 	right: 5px;
-	width: 4rem;
-	height: 4rem;
+	width: 6vh;
+	height: 6vh;
 	filter: drop-shadow(-0.05rem -0.05rem 0.01rem rgba(0, 0, 0, 0.5));
 }
