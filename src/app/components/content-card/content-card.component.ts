@@ -56,7 +56,12 @@ export class ContentCardComponent implements OnInit, AfterViewInit {
 	@Input() contentTitle!: string;
 	@Input() contentAbout!: string;
 	@Input() link!: string;
-	constructor() {}
+	scrHeight: any;
+	scrWidth: any;
+	carouselHeight!: number;
+	constructor() {
+		this.getScreenSize();
+	}
 
 	ngOnInit(): void {}
 
@@ -75,5 +80,14 @@ export class ContentCardComponent implements OnInit, AfterViewInit {
 			const bottomShown = rect.bottom <= window.innerHeight + 100;
 			this.isInView = topShown && bottomShown;
 		}
+	}
+
+	@HostListener("window:resize", ["$event"])
+	getScreenSize(): void {
+		this.scrHeight = window.innerHeight;
+		this.scrWidth = window.innerWidth;
+		console.log(this.scrHeight, this.scrWidth);
+		this.carouselHeight = (this.scrWidth / 100) * 21.88;
+		console.log(this.carouselHeight);
 	}
 }

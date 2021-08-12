@@ -33,7 +33,7 @@
 .content-about {
 	text-align: justify;
 	padding: 2rem;
-	font-size: 1.2rem;
+	font-size: 1vw;
 	max-width: 30vw;
 }
 
@@ -80,4 +80,5 @@
 
 carousel {
 	margin: 5vh;
+	width: 35vw;
 }
