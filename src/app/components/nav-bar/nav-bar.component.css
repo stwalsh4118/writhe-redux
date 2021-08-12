@@ -1,0 +1,32 @@
+:host {
+	width: 100%;
+	min-height: 50px;
+}
+
+.nav-wrapper {
+	width: 100%;
+	min-height: 50px;
+	box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.05);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 300;
+}
+
+.nav-title {
+	font-weight: 400;
+	font-size: 25px;
+}
+
+.site-links {
+	position: absolute;
+	left: 5px;
+}
+
+.logo {
+	position: absolute;
+	right: 5px;
+	width: 4rem;
+	height: 4rem;
+	filter: drop-shadow(-0.05rem -0.05rem 0.01rem rgba(0, 0, 0, 0.5));
+}
