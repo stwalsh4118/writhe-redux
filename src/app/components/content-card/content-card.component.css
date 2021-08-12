@@ -47,7 +47,7 @@
 	margin: 15vh;
 }
 
-.content-wrapper:hover {
+.content-wrapper:focus {
 	transform: rotateY(0deg);
 }
 
@@ -67,7 +67,7 @@
 	margin: 15vh;
 }
 
-.content-wrapper-left:hover {
+.content-wrapper-left:focus {
 	transform: rotateY(0deg);
 }
 
